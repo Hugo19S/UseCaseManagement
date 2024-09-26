@@ -1,0 +1,445 @@
+[
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.LogSourceController",
+    "Method": "GetLogSources",
+    "RelativePath": "api/LogSource",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.LogSourceController",
+    "Method": "CreateLogSource",
+    "RelativePath": "api/LogSource",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "logSourceRequest",
+        "Type": "UseCaseManagement.Service.Contract.CreateLogSourceRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.LogSourceController",
+    "Method": "GetLogSource",
+    "RelativePath": "api/LogSource/{logSourceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "logSourceId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.LogSourceController",
+    "Method": "UpdateLogSource",
+    "RelativePath": "api/LogSource/{logSourceId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "logSourceId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "sourceRequest",
+        "Type": "UseCaseManagement.Service.Contract.UpdateLogSourceRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.LogSourceController",
+    "Method": "DeleteLogSource",
+    "RelativePath": "api/LogSource/{logSourceId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "logSourceId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.LogSourceController",
+    "Method": "DownloadFile",
+    "RelativePath": "api/LogSource/download/{fileId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.LogSourceController",
+    "Method": "DeleteFile",
+    "RelativePath": "api/LogSource/file/{fileId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.LogSourceController",
+    "Method": "CreateFile",
+    "RelativePath": "api/LogSource/post/{logSourceId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "logSourceId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.TenantController",
+    "Method": "DeleteTenant",
+    "RelativePath": "api/Tenant/{tenantId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenantId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.TenantController",
+    "Method": "GetTenant",
+    "RelativePath": "api/Tenant/{tenantID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenantID",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.TenantController",
+    "Method": "AddTenantToUseCase",
+    "RelativePath": "api/Tenant/{useCaseId}/{tenantId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "useCaseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "tenantId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.TenantController",
+    "Method": "DeleteTenantFromUseCase",
+    "RelativePath": "api/Tenant/{useCaseId}/{tenantId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "useCaseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "tenantId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.UseCaseController",
+    "Method": "GetUseCases",
+    "RelativePath": "api/UseCase",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Category",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Tag",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Priority",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.UseCaseController",
+    "Method": "CreateUseCase",
+    "RelativePath": "api/UseCase",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "useCaseRequest",
+        "Type": "UseCaseManagement.Service.Contract.CreateUseCaseRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.UseCaseController",
+    "Method": "GetUseCase",
+    "RelativePath": "api/UseCase/{useCaseId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "useCaseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.UseCaseController",
+    "Method": "DeleteUseCase",
+    "RelativePath": "api/UseCase/{useCaseId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "useCaseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.UseCaseController",
+    "Method": "UpdateUseCase",
+    "RelativePath": "api/UseCase/{useCaseId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "useCaseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateUseCase",
+        "Type": "UseCaseManagement.Service.Contract.UpdateUseCaseRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.UseCaseController",
+    "Method": "DownloadFile",
+    "RelativePath": "api/UseCase/download/{fileId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.UseCaseController",
+    "Method": "DeleteFile",
+    "RelativePath": "api/UseCase/file/{fileId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.UseCaseController",
+    "Method": "CreateFile",
+    "RelativePath": "api/UseCase/post/{useCaseId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "useCaseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.VendorController",
+    "Method": "GetVendors",
+    "RelativePath": "api/Vendor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.VendorController",
+    "Method": "CreateVendor",
+    "RelativePath": "api/Vendor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vendorRequest",
+        "Type": "UseCaseManagement.Service.Contract.CreateVendorRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.VendorController",
+    "Method": "GetVendor",
+    "RelativePath": "api/Vendor/{vendorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vendorId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.VendorController",
+    "Method": "DeleteVendor",
+    "RelativePath": "api/Vendor/{vendorId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vendorId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UseCaseManagement.Service.Controllers.VendorController",
+    "Method": "UpdateVendor",
+    "RelativePath": "api/Vendor/{vendorId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vendorId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "vendorRequest",
+        "Type": "UseCaseManagement.Service.Contract.UpdateVendorRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

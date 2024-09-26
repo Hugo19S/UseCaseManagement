@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\UseCaseManagement.Service.props" />
+</Project>

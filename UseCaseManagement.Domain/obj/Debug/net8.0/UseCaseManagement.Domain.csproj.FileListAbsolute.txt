@@ -1,0 +1,11 @@
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\bin\Debug\net8.0\UseCaseManagement.Domain.deps.json
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\bin\Debug\net8.0\UseCaseManagement.Domain.dll
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\bin\Debug\net8.0\UseCaseManagement.Domain.pdb
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\obj\Debug\net8.0\UseCaseManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\obj\Debug\net8.0\UseCaseManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\obj\Debug\net8.0\UseCaseManagement.Domain.AssemblyInfo.cs
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\obj\Debug\net8.0\UseCaseManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\obj\Debug\net8.0\UseCaseManagement.Domain.dll
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\obj\Debug\net8.0\refint\UseCaseManagement.Domain.dll
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\obj\Debug\net8.0\UseCaseManagement.Domain.pdb
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Domain\obj\Debug\net8.0\ref\UseCaseManagement.Domain.dll
