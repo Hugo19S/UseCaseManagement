@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace UseCaseManagement.Service.Controllers;
 
-[Authorize]
 [ApiController]
 public class ApiController : ControllerBase
 {

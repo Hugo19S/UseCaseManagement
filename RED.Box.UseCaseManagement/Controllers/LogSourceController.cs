@@ -17,9 +17,11 @@ using UseCaseManagement.Service.Contract;
 namespace UseCaseManagement.Service.Controllers;
 
 [Route("api/[controller]")]
+[Authorize(Roles = "logsource_viewer")]
 public class LogSourceController(ISender sender, IMapper mapper) : ApiController
 {
     [HttpGet]
+    
     public async Task<ActionResult> GetLogSources()
     {
         var logSource = await sender.Send(new GetLogSourcesQuery());
@@ -38,6 +40,7 @@ public class LogSourceController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpPost]
+    [Authorize(Roles = "logsource_manager")]
     public async Task<ActionResult> CreateLogSource([FromBody] CreateLogSourceRequest logSourceRequest)
     {
         var logSourceCreated = await sender.Send(new CreateLogSourceCommand(logSourceRequest.Name, logSourceRequest.Description));
@@ -48,6 +51,7 @@ public class LogSourceController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpPut("{logSourceId:guid}")]
+    [Authorize(Roles = "logsource_manager")]
     public async Task<ActionResult> UpdateLogSource(Guid logSourceId, [FromBody] UpdateLogSourceRequest sourceRequest)
     {
         var logSourceOr = await sender.Send(new UpdateLogSourceCommand(logSourceId, sourceRequest.Name,
@@ -59,6 +63,7 @@ public class LogSourceController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpDelete("{logSourceId:guid}")]
+    [Authorize(Roles = "logsource_manager")]
     public async Task<ActionResult> DeleteLogSource(Guid logSourceId)
     {
         var logSourceDeleted = await sender.Send(new DeleteLogSourceCommand(logSourceId));
@@ -69,6 +74,7 @@ public class LogSourceController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpPost("post/{logSourceId:guid}")]
+    [Authorize(Roles = "logsource_manager")]
     public async Task<ActionResult> CreateFile(Guid logSourceId, [FromForm] CreateLogSourceFileRequest logSourceRequest)
     {
         FileRepresentation? fileRepresentation = null;
@@ -111,6 +117,7 @@ public class LogSourceController(ISender sender, IMapper mapper) : ApiController
 
 
     [HttpDelete("file/{fileId}")]
+    [Authorize(Roles = "logsource_manager")]
     public async Task<ActionResult> DeleteFile(Guid fileId, CancellationToken cancellationToken)
     {
         var fileDeleted = await sender.Send(new DeleteLogSourceFileCommand(fileId), cancellationToken);

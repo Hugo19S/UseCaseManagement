@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UseCaseManagement.Application.Vendors.Commands.CreateVendors;
 using UseCaseManagement.Application.Vendors.Commands.DeleteVendors;
@@ -11,6 +12,7 @@ using UseCaseManagement.Service.Contract;
 namespace UseCaseManagement.Service.Controllers;
 
 [Route("api/[controller]")]
+[Authorize(Roles = "vendor_viewer")]
 public class VendorController(ISender sender, IMapper mapper) : ApiController
 {
     [HttpGet]
@@ -34,6 +36,7 @@ public class VendorController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpPost]
+    [Authorize(Roles = "vendor_manager")]
     public async Task<ActionResult> CreateVendor([FromBody] CreateVendorRequest vendorRequest, CancellationToken cancellationToken)
     {
         var vendorCreated = await sender.Send(new CreateVendorCommand(vendorRequest.Name), cancellationToken);
@@ -44,6 +47,7 @@ public class VendorController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpDelete("{vendorId:guid}")]
+    [Authorize(Roles = "vendor_manager")]
     public async Task<ActionResult> DeleteVendor(Guid vendorId, CancellationToken cancellationToken)
     {
         var vendorDeleted = await sender.Send(new DeleteVendorCommand(vendorId), cancellationToken);
@@ -54,6 +58,7 @@ public class VendorController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpPut("{vendorId:guid}")]
+    [Authorize(Roles = "vendor_manager")]
     public async Task<ActionResult> UpdateVendor(Guid vendorId, [FromBody] UpdateVendorRequest vendorRequest)
     {
         var vendorOr = await sender.Send(new UpdateVendorCommand(vendorId, vendorRequest.Name));

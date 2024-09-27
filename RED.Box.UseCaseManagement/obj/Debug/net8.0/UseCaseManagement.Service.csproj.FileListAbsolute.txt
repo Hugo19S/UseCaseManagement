@@ -128,3 +128,4 @@ C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\RED.B
 C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\RED.Box.UseCaseManagement\obj\Debug\net8.0\UseCaseManagement.Service.pdb
 C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\RED.Box.UseCaseManagement\obj\Debug\net8.0\UseCaseManagement.Service.genruntimeconfig.cache
 C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\RED.Box.UseCaseManagement\obj\Debug\net8.0\ref\UseCaseManagement.Service.dll
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\RED.Box.UseCaseManagement\obj\Debug\net8.0\UseCaseManagement.Service.sourcelink.json

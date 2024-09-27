@@ -18,6 +18,7 @@ using UseCaseManagement.Service.Contract;
 namespace UseCaseManagement.Service.Controllers;
 
 [Route("api/[controller]")]
+[Authorize(Roles = "usecase_viewer")]
 public class UseCaseController(ISender sender, IMapper mapper) : ApiController
 {
     [HttpGet]
@@ -29,7 +30,6 @@ public class UseCaseController(ISender sender, IMapper mapper) : ApiController
             Problem);
     }
 
-    [Authorize(Roles = "manager")]
     [HttpGet("{useCaseId:guid}")]
     public async Task<ActionResult> GetUseCase(Guid useCaseId, CancellationToken cancellationToken)
     {
@@ -40,9 +40,10 @@ public class UseCaseController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpPost]
+    [Authorize(Roles = "usecase_manager")]
     public async Task<ActionResult> CreateUseCase([FromBody] CreateUseCaseRequest useCaseRequest, CancellationToken cancellationToken)
     {
-        var createdBy = "Mario"; //This will be the value to extract from the token
+        var createdBy = HttpContext.User.Claims.ToList().ElementAt(5).Value;
 
         var useCaseCreated = await sender.Send(
             new CreateUseCaseCommand(useCaseRequest.Title, useCaseRequest.Type, 
@@ -56,6 +57,7 @@ public class UseCaseController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpDelete("{useCaseId:guid}")]
+    [Authorize(Roles = "usecase_manager")]
     public async Task<ActionResult> DeleteUseCase(Guid useCaseId, CancellationToken cancellationToken)
     {
         var vendorDeleted = await sender.Send(new DeleteUseCaseCommand(useCaseId), cancellationToken);
@@ -66,9 +68,10 @@ public class UseCaseController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpPut("{useCaseId:guid}")]
+    [Authorize(Roles = "usecase_manager")]
     public async Task<ActionResult> UpdateUseCase(Guid useCaseId, [FromBody] UpdateUseCaseRequest updateUseCase)
     {
-        var updatedBy = "Mario"; //This will be the value to extract from the token
+        var updatedBy = HttpContext.User.Claims.ToList().ElementAt(5).Value;
 
         var vendorOr = await sender.Send(new UpdateUseCaseCommand(useCaseId, updateUseCase.Title, updateUseCase.Type, updateUseCase.Status, 
                                                                   updateUseCase.Category, updateUseCase.Tag, updateUseCase.Priority,
@@ -79,6 +82,7 @@ public class UseCaseController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpPost("post/{useCaseId:guid}")]
+    [Authorize(Roles = "usecase_manager")]
     public async Task<ActionResult> CreateFile(Guid useCaseId, [FromForm] CreateUseCaseFileRequest useCaseRequest)
     {
         FileRepresentation? fileRepresentation = null;
@@ -121,6 +125,7 @@ public class UseCaseController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpDelete("file/{fileId}")]
+    [Authorize(Roles = "usecase_manager")]
     public async Task<ActionResult> DeleteFile(Guid fileId, CancellationToken cancellationToken)
     {
         var fileDeleted = await sender.Send(new DeleteUseCaseFileCommand(fileId), cancellationToken);

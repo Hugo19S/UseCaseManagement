@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UseCaseManagement.Application.Tenants.Commands.AddTenantToUseCase;
 using UseCaseManagement.Application.Tenants.Commands.DeleteTenantFromUseCase;
@@ -10,6 +11,7 @@ using UseCaseManagement.Service.Contract;
 namespace UseCaseManagement.Service.Controllers;
 
 [Route("api/[controller]")]
+[Authorize(Roles = "tenant_viewer")]
 public class TenantController(ISender sender, IMapper mapper) : ApiController
 {
     [HttpGet("{tenantID:guid}")]
@@ -23,6 +25,7 @@ public class TenantController(ISender sender, IMapper mapper) : ApiController
     }
 
     [HttpDelete("{tenantId:guid}")]
+    [Authorize(Roles = "tenant_manager")]
     public async Task<ActionResult> DeleteTenant(Guid tenantId, CancellationToken cancellationToken)
     {
         var tenantDeleted = await sender.Send(new DeleteTenantCommand(tenantId), cancellationToken);
@@ -32,6 +35,7 @@ public class TenantController(ISender sender, IMapper mapper) : ApiController
     /* Metodos para UseCaseControlle */
 
     [HttpPost("{useCaseId:guid}/{tenantId:guid}")]
+    [Authorize(Roles = "tenant_manager")]
     public async Task<ActionResult> AddTenantToUseCase(Guid useCaseId, Guid tenantId, CancellationToken cancellationToken)
     {
         var tenantToUseCase = await sender.Send(new AddTenantToUseCaseCommand( useCaseId, tenantId), cancellationToken);
@@ -42,6 +46,7 @@ public class TenantController(ISender sender, IMapper mapper) : ApiController
     }
     
     [HttpDelete("{useCaseId:guid}/{tenantId:guid}")]
+    [Authorize(Roles = "tenant_manager")]
     public async Task<ActionResult> DeleteTenantFromUseCase(Guid useCaseId, Guid tenantId, CancellationToken cancellationToken)
     {
         var tenantFromUseCaseDeleted = await sender.Send(new DeleteTenantUseCaseCommand( useCaseId, tenantId), cancellationToken);
