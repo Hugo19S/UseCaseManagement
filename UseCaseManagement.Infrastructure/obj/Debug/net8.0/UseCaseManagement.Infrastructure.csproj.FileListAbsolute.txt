@@ -17,3 +17,4 @@ C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCa
 C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Infrastructure\obj\Debug\net8.0\UseCaseManagement.Infrastructure.pdb
 C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Infrastructure\obj\Debug\net8.0\UseCaseManagement.Infrastructure.genruntimeconfig.cache
 C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Infrastructure\obj\Debug\net8.0\ref\UseCaseManagement.Infrastructure.dll
+C:\Users\Hugo Furtado\Desktop\Estagio\ToRedShift\RED.Box.UseCaseManagement\UseCaseManagement.Infrastructure\obj\Debug\net8.0\UseCaseManagement.Infrastructure.sourcelink.json

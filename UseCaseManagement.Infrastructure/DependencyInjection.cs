@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using UseCaseManagement.Application.Common;
 using UseCaseManagement.Application.IRepositories;
 using UseCaseManagement.Infrastructure.Repositories;

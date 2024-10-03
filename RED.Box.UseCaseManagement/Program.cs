@@ -21,23 +21,22 @@ builder.Services
     .AddApplication();
 
 /******** Integrate KeyCloak Service ********/
-builder.Services.AddAuthentication();
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
-    AddJwtBearer(options =>
-    {
-        options.RequireHttpsMetadata = false;
-        options.Audience = builder.Configuration["Authentication:Audience"];
-        options.MetadataAddress = builder.Configuration["Authentication:MetadataAddress"]!;
-        options.TokenValidationParameters = new()
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Authentication:ValidIssuer"],
-            ValidAudience = builder.Configuration["Authentication:Audience"],
-            RoleClaimType = "realm_access_role"
-        };
-    });
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+     {
+         options.RequireHttpsMetadata = false;
+         options.Audience = builder.Configuration["Authentication:Audience"];
+         options.MetadataAddress = builder.Configuration["Authentication:MetadataAddress"]!;
+         options.TokenValidationParameters = new()
+         {
+             ValidateIssuer = true,
+             ValidateAudience = true,
+             ValidateIssuerSigningKey = true,
+             ValidIssuer = builder.Configuration["Authentication:ValidIssuer"],
+             ValidAudience = builder.Configuration["Authentication:Audience"],
+             RoleClaimType = builder.Configuration["Authentication:RoleAccess"]
+         };
+     });
 
 var app = builder.Build();
 

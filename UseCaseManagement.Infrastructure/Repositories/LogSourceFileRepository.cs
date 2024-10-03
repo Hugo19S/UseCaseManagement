@@ -22,7 +22,8 @@ public class LogSourceFileRepository(UseCaseDbContext dbContext, IConfiguration 
 
     public async Task<LogSourceFile?> GetLogSourceFileById(Guid fileId, CancellationToken cancellationToken)
     {
-        return await dbContext.LogSourceFile.FirstOrDefaultAsync(x => x.Id == fileId, cancellationToken);
+        return await dbContext.LogSourceFile
+            .FirstOrDefaultAsync(x => x.Id == fileId, cancellationToken);
     }
 
     public async Task<FileStream> ReadFile(string uri, CancellationToken cancellationToken)
